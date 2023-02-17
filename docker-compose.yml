@@ -37,7 +37,7 @@ x-volumes:
 
 services:
   taiga-db:
-    image: postgres:12.3
+    image: postgres:12
     environment:
       POSTGRES_DB: taiga
       POSTGRES_USER: taiga
@@ -71,7 +71,7 @@ services:
       - taiga-async-rabbitmq
 
   taiga-async-rabbitmq:
-    image: rabbitmq:3.8-management-alpine
+    image: rabbitmq:3-management-alpine
     environment:
       RABBITMQ_ERLANG_COOKIE: secret-erlang-cookie
       RABBITMQ_DEFAULT_USER: taiga
@@ -105,7 +105,7 @@ services:
       - taiga-events-rabbitmq
 
   taiga-events-rabbitmq:
-    image: rabbitmq:3.8-management-alpine
+    image: rabbitmq:3-management-alpine
     environment:
       RABBITMQ_ERLANG_COOKIE: secret-erlang-cookie
       RABBITMQ_DEFAULT_USER: taiga
@@ -125,7 +125,7 @@ services:
       - taiga
 
   taiga-gateway:
-    image: nginx:1.19-alpine
+    image: nginx:1-alpine
     ports:
       - "9000:80"
     volumes:
