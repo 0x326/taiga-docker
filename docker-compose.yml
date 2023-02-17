@@ -5,10 +5,10 @@ x-environment:
   # Database settings
   POSTGRES_DB: taiga
   POSTGRES_USER: taiga
-  POSTGRES_PASSWORD: taiga
+  POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
   POSTGRES_HOST: taiga-db
   # Taiga settings
-  TAIGA_SECRET_KEY: "taiga-back-secret-key"
+  TAIGA_SECRET_KEY: "${TAIGA_SECRET_KEY}"
   TAIGA_SITES_SCHEME: "http"
   TAIGA_SITES_DOMAIN: "localhost:9000"
   TAIGA_SUBPATH: "" # "" or "/subpath"
@@ -24,7 +24,7 @@ x-environment:
   # Rabbitmq settings
   # Should be the same as in taiga-async-rabbitmq and taiga-events-rabbitmq
   RABBITMQ_USER: taiga
-  RABBITMQ_PASS: taiga
+  RABBITMQ_PASS: "${RABBITMQ_PASS}"
   # Telemetry settings
   ENABLE_TELEMETRY: "True"
 
